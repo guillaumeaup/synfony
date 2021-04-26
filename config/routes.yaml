@@ -1,0 +1,3 @@
+pehachpe:
+     path: /
+     controller: App\Controller\PehachpeController::index

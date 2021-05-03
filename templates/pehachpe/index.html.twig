@@ -1,77 +1,26 @@
 {% extends 'base.html.twig' %}
 {% block title 'Search for a movie' %}
+
 {% block body %}
 
-<br>
-
 <!-- Search bars -->
-    <div class="ahah">
-                    <div class="input-group">
-                        <form method="GET">
-                            <div class="input-group mb-1 "> 
-                                <div class="input-group-prepend"> </div>
-                                <input type="text" class="form-control" name="movie_name" placeholder="Search by movie name" aria-label="Movie name" aria-describedby="basic-addon1">
-                                <button class= "btn btn-secondary" type="submit">Search</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="input-group">
-                        <form method="GET">
-                            <div class="input-group mb-1 ">
-                                <div class="input-group-prepend"> </div>
-                                <input type="text" class="form-control" name="actor_name" placeholder="Search by actor name" aria-label="Movie name" aria-describedby="basic-addon1">
-                                <button class= "btn btn-secondary" type="submit">Search</button>
-                            </div>
-                        </form>
-                    </div>
-    </div>
-    <div class="ahah">
-                    <div class="input-group">
-                        <form method="GET">
-                            <div class="input-group mb-1 ">
-                                <div class="input-group-prepend"> </div>
-                                <input type="text" class="form-control" name="genre" placeholder="Search by genre" aria-label="genre" aria-describedby="basic-addon1">
-                                <button class= "btn btn-secondary" type="submit">Search</button>
-                            </div>
-                        </form>
-                    </div>
 
-                    <div class="input-group">        
-                        <form method="GET">
-                            <div class="input-group mb-1 ">
-                                <div class="input-group-prepend"> </div>
-                                <input type="text" class="form-control" name="release_date" placeholder="Search by release date" aria-label="release_date" aria-describedby="basic-addon1">
-                                <button class= "btn btn-secondary" type="submit">Search</button>
-                            </div>
-                        </form>
-                    </div>
-    </div>
-<!-- End of search bars -->
-
-<br>
-
-<div class="cont">
-    {% for movie in movies %}<br>
-        <div class="card">
-            <div class="card-body">
-            <h5 class="btn btn-primary btn-lg btn-block">{{ movie.title }} </h5><br>
-            <img src={{ movie.poster }}> <br><br>
-            <p class="card-text" style="color: gray;">{{ movie.overview }} </p>
+    <div class="cont">
+        {% for movie in movies %}<br>
+            <div class="card">
+                <div class="card-body">
+                <h5 class="btn btn-primary btn-lg btn-block">{{ movie.title }} </h5><br>
+                <img src={{ movie.poster }}> <br><br>
+                <p class="card-text" style="color: gray;">{{ movie.overview }} </p>
+            </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-
-
-</div>
-
-
 
     <style> 
         .cont{display: flex; flex-wrap: wrap; }
         .card{width: 50%; text-align : center; min-width: 300px; }
         .card-body{padding: 10px 50px 50px 50px;}
-        .ahah {display: flex; padding-left: 200px; flex-wrap: unwrap; margin: 0 auto;}
-        .input-group {min-width: 200px;}
     </style>
     
 {% endblock %}
